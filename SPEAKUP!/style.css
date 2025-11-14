@@ -1,0 +1,299 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* NAVBAR */
+.navbar {
+    position: sticky;
+    top: 15px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 15px 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-logo {
+    position: absolute;
+    left: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo img {
+    width: 65px;   /* tamaño normal */
+    height: auto;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 40px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* HERO */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 120px 20px;
+    background: #d0f0fd;
+}
+
+.hero-content {
+    max-width: 500px;
+    flex: 0 0 45%;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+}
+
+/* ---------- HERO IMAGES: GRID (2 verticales arriba, 1 horizontal abajo) ---------- */
+.hero-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;   /* dos columnas para las verticales */
+    grid-template-rows: auto auto;    /* fila para verticales + fila para la horizontal */
+    gap: 25px;
+    align-items: center;
+    justify-items: center;
+    max-width: 780px;
+    flex: 0 0 50%;
+}
+
+/* verticales (izquierda y derecha, mismas dimensiones) */
+.hero-images .v {
+    width: 280px;
+    height: 500px;      /* misma altura para igualarlas */
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* horizontal (ocupa las 2 columnas bajo las verticales) */
+.hero-images .h {
+    grid-column: 1 / 3; /* ocupa ambas columnas */
+    width: 560px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* SECCIONES */
+section {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+/* VERSIONES */
+.versiones-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 48px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.version-card {
+    background: white;
+    border-radius: 14px;
+    padding: 24px;
+    width: 100%;
+    max-width: 360px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    text-align: left;
+}
+
+.version-img {
+    width: 140px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto 14px auto;
+}
+
+.version-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.version-card p {
+    margin-bottom: 12px;
+    color: #555;
+}
+
+.version-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.version-card ul li {
+    margin-bottom: 8px;
+    padding-left: 22px;
+    position: relative;
+}
+
+.version-card ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #2c8cf4;
+}
+
+.version-divider {
+    width: 6px;
+    border-radius: 6px;
+    background: linear-gradient(180deg, #9bd7ff, #2c8cf4);
+}
+
+/* FUNCIONALIDADES */
+.func-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 50px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.func-card img {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.func-card h3 {
+    margin-bottom: 10px;
+}
+
+.func-card p {
+    font-size: 1rem;
+}
+
+/* TESTIMONIOS */
+.testimonios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 50px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.test-card img {
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.test-card p {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.test-card span {
+    font-weight: bold;
+}
+
+/* OBTENER AHORA */
+.stores {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+.stores img {
+    width: 220px;
+    height: 120px;
+    object-fit: contain;   /* Ajusta la imagen sin deformarla */
+}
+
+/* FOOTER */
+footer {
+    background: #333;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVE: apilar hero y adaptar tamaños */
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        padding: 60px 20px;
+    }
+    .hero-content {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    .hero-images {
+        max-width: 100%;
+    }
+    .hero-images .v {
+        width: 240px;
+        height: 420px;
+    }
+    .hero-images .h {
+        width: calc(100% - 40px);
+        height: 220px;
+    }
+}
+
+@media (max-width: 720px) {
+    .navbar {
+        width: 96%;
+        padding: 12px;
+    }
+    .hero {
+        padding: 40px 14px;
+    }
+    .hero-images {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+    }
+    .hero-images .v,
+    .hero-images .h {
+        width: 92%;
+        height: auto;
+    }
+    .versiones-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .version-card {
+        max-width: 100%;
+    }
+}
